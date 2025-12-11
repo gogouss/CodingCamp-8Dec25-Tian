@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    
+    <!-- CSS EXTERNAL FILE  -->
+    <link rel="stylesheet" href="/css/style.css"> 
+      <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body style="
+    justify-items: center;
+    height: 100vh;
+    align-content: center;">
+    <header class="pb-3">
+        <h1 class="text-4xl"><b>Todo List</b></h1>
+    </header>
+    <main>
+        <section>
+            <form>
+                <input class="border rounded p-2" type="text" id="todo-input" placeholder="Enter a new todo">
+                <input class="border rounded p-2" type="date" id="todo-date" placeholder="Enter due date">
+                <button 
+                class="border rounded bg-green-500 p-2 text-white" 
+                type="button" onclick="addTodo()"> Add</button>
+            </form>
+        </section>
+        <section class="flex pt-2 justify-between">
+            <button class="border rounded p-2 bg-red-500 text-white" onclick="clearTodos()">Clear All </button>
+            <button class="border rounded p-2 bg-blue-500 text-white" onclick="filterTodos()">Filter </button>
+        </section>
+        <section class="pt-3">
+            <header>
+                <h3 class="text-2xl"><b>List of Todos</b></h3>
+            <ul id="todo-list" class="pt-2">
+                <!-- Todo items will be dynamically added here -->
+                 <li>No Todos yet...</li>
+            </ul>
+    </main>
+    <Footer class="pt-3"> 
+        <p>© 2025 Todo List</p>
+    </Footer>
+
+        
+    <script src="/js/script.js"></script>
+</body>
+</html>
