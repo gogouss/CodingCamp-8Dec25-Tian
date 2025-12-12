@@ -13,30 +13,34 @@
     justify-items: center;
     height: 100vh;
     align-content: center;">
-    <header class="pb-3">
-        <h1 class="text-4xl"><b>Todo List</b></h1>
-    </header>
-    <main>
-        <section>
-            <form>
-                <input class="border rounded p-2" type="text" id="todo-input" placeholder="Enter a new todo">
-                <input class="border rounded p-2" type="date" id="todo-date" placeholder="Enter due date">
-                <button 
-                class="border rounded bg-green-500 p-2 text-white" 
-                type="button" onclick="addTodo()"> Add</button>
-            </form>
-        </section>
-        <section class="flex pt-2 justify-between">
-            <button class="border rounded p-2 bg-red-500 text-white" onclick="clearTodos()">Clear All </button>
-            <button class="border rounded p-2 bg-blue-500 text-white" onclick="filterTodos()">Filter </button>
-        </section>
-        <section class="pt-3">
-            <header>
-                <h3 class="text-2xl"><b>List of Todos</b></h3>
-            <ul id="todo-list" class="pt-2">
-                <!-- Todo items will be dynamically added here -->
-                 <li>No Todos yet...</li>
-            </ul>
+    <main class="border rounded p-8 bg-gray-100" style="justify-items: center;">
+        <header class="pb-3">
+            <h1 class="text-5xl font-serif"><b>Todo List</b></h1>
+        </header>
+        <div>
+            <section>
+                <form>
+                    <input class="border rounded p-2 font-serif" type="text" id="todo-input" placeholder="Enter a new todo" maxlength="32" style="width: 310px;">
+                    <input class="border rounded p-2 font-serif" type="date" id="todo-date" placeholder="Enter due date">
+                    <button 
+                    class="border rounded bg-green-500 p-2 text-white hover:bg-green-700 font-serif" 
+                    type="button" onclick="addTodo()"> Add</button>
+                </form>
+            </section>
+            <section class="flex pt-2 justify-between">
+                <button class="border rounded p-2 bg-red-500 text-white hover:bg-red-700 font-serif" onclick="clearTodos()">Delete All </button>
+                <button class="border rounded p-2 bg-blue-500 text-white hover:bg-blue-700 font-serif" onclick="filterTodos()">Filter </button>
+
+            </section>
+            <section class="pt-3">
+                <header>
+                    <h3 class="text-3xl font-serif"><b>List of Todos</b></h3> <hr/>
+                <ul id="todo-list" class="pt-2">
+                    <!-- Todo items will be dynamically added here -->
+                        <li class="text-2xl text-gray-600">No Todos yet...</li>
+                </ul>
+            </section>
+        </div>
     </main>
     <Footer class="pt-3"> 
         <p>© 2025 Todo List</p>

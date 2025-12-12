@@ -32,12 +32,20 @@ function renderTodos() {
     todo.forEach((todo, _) => {
         todoList.innerHTML += `
         <li>
-            <p class="text-2xl">${todo.text}
-            <span class="text-sm">${todo.date}</span></p>
+            <p class="text-2xl pt-2 text-gray-600">${todo.text}
+            <span class="text-xs text-gray-500">${todo.date}</span>
+            <button onclick="removeTodo(this)" class="bg-red-500 hover:bg-red-700 text-white rounded text-xl p-1" style="float: right;">x</button>
+            </p>
         </li>`;
     });
 }
 
+function removeTodo(button) {
+    const li = button.closest('li');
+    const index = Array.from(li.parentNode.children).indexOf(li);
+    todo.splice(index, 1);
+    renderTodos();
+}
 
 function filterTodos() {
     let sorted = [...todo];
@@ -47,11 +55,13 @@ function filterTodos() {
     const todoList = document.getElementById('todo-list');
     todoList.innerHTML = '';
 
-    sorted.forEach(item => {
+    sorted.forEach(todo => {
         todoList.innerHTML += `
-        <li>
-            <p class="text-2xl">${item.text}
-            <span class="text-sm">${item.date}</span></p>
+         <li>
+            <p class="text-2xl pt-2 text-gray-600">${todo.text}
+            <span class="text-xs text-gray-500">${todo.date}</span>
+            <button onclick="removeTodo(this)" class="bg-red-500 hover:bg-red-700 text-white rounded text-xl p-1" style="float: right;">x</button>
+            </p>
         </li>`;
     });
 }
